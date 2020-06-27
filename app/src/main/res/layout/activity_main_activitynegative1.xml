@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivitynegative1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Detail of pet carer  :-"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Name(Ishaan)"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Gender(Male)"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/editTextNumber3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Age(25)"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Occupation(Student)"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/editTextTextPostalAddress2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Address(53/4, Gomtinagar, Lucknow, Uttar Pradesh)"
+            android:inputType="textPostalAddress" />
+
+        <EditText
+            android:id="@+id/editTextPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Contact No.(7047837287)"
+            android:inputType="phone" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Species Preference:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#120E0E" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="92dp"
+            android:gravity="center">
+
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="133dp"
+                android:layout_height="wrap_content"
+                android:text="Cat" />
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="131dp"
+                android:layout_height="wrap_content"
+                android:text="Dog" />
+
+            <RadioButton
+                android:id="@+id/radioButton"
+                android:layout_width="133dp"
+                android:layout_height="wrap_content"
+                android:text="Rat" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonNeg1"
+                android:layout_width="177dp"
+                android:layout_height="wrap_content"
+                android:text="Cancel" />
+
+            <Button
+                android:id="@+id/buttonNeg2"
+                android:layout_width="179dp"
+                android:layout_height="wrap_content"
+                android:text="Register " />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
