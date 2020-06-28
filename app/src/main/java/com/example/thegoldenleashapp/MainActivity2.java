@@ -16,7 +16,7 @@ import android.widget.Toast;
 public class MainActivity2 extends AppCompatActivity {
 
     private EditText s1,s2,s3,s4,s5,s6;
-    private int radius;
+    private int radius=2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +49,7 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ConfirmSearch(v);
+                if(!checkFields()) return;
                 Intent intent = new Intent(MainActivity2.this,MapActivity.class);
                 intent.putExtra("radius",radius);
                 startActivity(intent);
@@ -72,12 +73,12 @@ public class MainActivity2 extends AppCompatActivity {
 
         if(checkFields()) {
             Toast.makeText(this, res, Toast.LENGTH_LONG).show();
-            s1.setText("");
-            s2.setText("");
-            s3.setText("");
-            s4.setText("");
-            s5.setText("");
-            s6.setText("");
+//            s1.setText("");
+//            s2.setText("");
+//            s3.setText("");
+//            s4.setText("");
+//            s5.setText("");
+//            s6.setText("");
         }
         else{
             Toast.makeText(this,"Some Fields are Empty!!",Toast.LENGTH_SHORT).show();

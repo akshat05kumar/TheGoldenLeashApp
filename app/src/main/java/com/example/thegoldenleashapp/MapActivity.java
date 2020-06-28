@@ -10,6 +10,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -40,7 +41,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
         //intent values of radius of nearby locations
         radius = getIntent().getIntExtra("radius",2);
-
         //getting Map Ready
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
@@ -49,9 +49,11 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         this.googleMap = googleMap;
+        currentLatLng = new LatLng(26.873801,80.947523);
+        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng,13));
+        Log.d("debugging","radius in mapready : "+radius);
+        nearbyLocations();
         checkPermissions();
-        LatLng sydney = new LatLng(-33.852,151.211);
-        googleMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
     }
 
     private void checkPermissions(){
@@ -73,7 +75,8 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == 011020) {
             if (grantResults.length == 0)
-                return;
+            {   Log.d("Debugging","permissions granted");
+                return;}
             if (grantResults[0] != PackageManager.PERMISSION_GRANTED) {
                 Toast.makeText(getApplicationContext(),
                         "Permission required to access location", Toast.LENGTH_SHORT).show();
@@ -85,6 +88,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
     @SuppressLint("MissingPermission")
     private void initFusedListener() {
+
         googleMap.setMyLocationEnabled(true);
         FusedLocationProviderClient fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
         fusedLocationClient.getLastLocation()
@@ -93,6 +97,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                     public void onSuccess(Location location) {
                         if(location!=null)
                         {
+                            Log.d("Debugging",location.getLatitude()+" : "+location.getLongitude());
                             currentLatLng = new LatLng(26.873801,80.947523);
 //                            currentLatLng = new LatLng(location.getLatitude(),location.getLongitude());
                             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng,15-radius));
@@ -139,6 +144,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     private void addCircle(){
         CircleOptions circleOptions = new CircleOptions();
         circleOptions.center(currentLatLng);
+        Log.d("Debugging","radius : "+radius);
         Toast.makeText(MapActivity.this,"radius : "+radius,Toast.LENGTH_SHORT).show();
         circleOptions.radius(radius*1000);
         circleOptions.strokeColor(Color.parseColor("#77d00000"));
