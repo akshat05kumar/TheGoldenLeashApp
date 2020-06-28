@@ -57,6 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
             android:text='Register "AS" pet care'
+            android:onClick="ASButton"
             android:textSize="24sp" />
     </androidx.cardview.widget.CardView>
 </LinearLayout>

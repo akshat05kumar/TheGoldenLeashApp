@@ -20,7 +20,7 @@
             android:textSize="30sp" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/Name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -28,7 +28,7 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/Gender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -36,7 +36,7 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/editTextNumber3"
+            android:id="@+id/Age"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -44,7 +44,7 @@
             android:inputType="number" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName6"
+            android:id="@+id/Occupation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -52,7 +52,7 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/editTextTextPostalAddress2"
+            android:id="@+id/Address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -60,7 +60,7 @@
             android:inputType="textPostalAddress" />
 
         <EditText
-            android:id="@+id/editTextPhone"
+            android:id="@+id/ContactNo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -75,30 +75,13 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="#120E0E" />
 
-        <LinearLayout
+        <EditText
+            android:id="@+id/SpeciesPrefrence"
             android:layout_width="match_parent"
-            android:layout_height="92dp"
-            android:gravity="center">
-
-            <RadioButton
-                android:id="@+id/radioButton3"
-                android:layout_width="133dp"
-                android:layout_height="wrap_content"
-                android:text="Cat" />
-
-            <RadioButton
-                android:id="@+id/radioButton2"
-                android:layout_width="131dp"
-                android:layout_height="wrap_content"
-                android:text="Dog" />
-
-            <RadioButton
-                android:id="@+id/radioButton"
-                android:layout_width="133dp"
-                android:layout_height="wrap_content"
-                android:text="Rat" />
-
-        </LinearLayout>
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="SpeciesPrefrence(Dog,Cat etc.)"
+            android:inputType="textPersonName" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -110,13 +93,15 @@
                 android:id="@+id/buttonNeg1"
                 android:layout_width="177dp"
                 android:layout_height="wrap_content"
-                android:text="Cancel" />
+                android:text="Cancel"
+                android:onClick="CancelButton"/>
 
             <Button
                 android:id="@+id/buttonNeg2"
                 android:layout_width="179dp"
                 android:layout_height="wrap_content"
-                android:text="Register " />
+                android:text="Register "
+                android:onClick="RegisterButton"/>
         </LinearLayout>
 
     </LinearLayout>

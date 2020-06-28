@@ -15,37 +15,32 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       ASButton();
-       FORButton();
+        FORButton();
+
     }
 
-    private void FORButton() {
-        Button forButton=(Button) findViewById(R.id.button2);
-        forButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = MainActivitynegative1.makeIntent(MainActivity.this);
-                startActivity(intent);
-            }
-        });
+    public void ASButton(View view) {
+        new Dbmanager(this);
+        Intent intent = MainActivitynegative1.makeIntent(MainActivity.this);
+        startActivity(intent);
+
     }
 
 
-    public void ASButton()
-    {
+    public void FORButton()
+    {   new Dbmanager(this);
         Button asButton=(Button) findViewById(R.id.button1);
         asButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
 //                Intent intent= new Intent(MainActivity.this,MainActivity2.class);
+
                 Intent intent= MainActivity2.makeIntent(MainActivity.this);
                 startActivity(intent);
             }
         });
-      {
 
-      }
 
     }
 
