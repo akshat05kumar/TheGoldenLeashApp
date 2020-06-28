@@ -21,11 +21,15 @@ public class Dbmanager extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
        String qry="create table tb_AS (id integer primary key autoincrement, name text, Gender text, Age integer, Occupation text, Address text, ContactNo integer, SpeciesPrefrence text )";
        db.execSQL(qry);
+        String Qry="create table tb_FOR (id integer primary key autoincrement, Petname text, PetBreed text, PetAge integer,OwnerName text, OwnerAddress text, OwnerContactNo integer)";
+        db.execSQL(Qry);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS tb_AS");
+        onCreate(db);
+        db.execSQL("DROP TABLE IF EXISTS tb_FOR");
         onCreate(db);
     }
 
@@ -47,6 +51,26 @@ public class Dbmanager extends SQLiteOpenHelper {
             return "Failed";
         else
             return "You Have Successfully Registered as a PET CARER!!!!";
+
+    }
+
+    public String GetpetCare(String q1,String q2,String q3,String q4,String q5,String q6)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv= new ContentValues();
+        cv.put("Petname",q1);
+        cv.put("PetBreed",q2);
+        cv.put("PetAge",q3);
+        cv.put("OwnerName",q4);
+        cv.put("OwnerAddress",q5);
+        cv.put("OwnerContactNo",q6);
+
+        long res=db.insert("tb_FOR",null,cv);
+
+        if(res==-1)
+            return "Failed";
+        else
+            return "Data entered successfully.Markers showing pet caretaker for you !!  ";
 
     }
 }

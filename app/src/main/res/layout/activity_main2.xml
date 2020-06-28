@@ -19,7 +19,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName3"
+            android:id="@+id/name1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -27,15 +27,15 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName4"
+            android:id="@+id/Breeds"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Species(germanshephard)"
+            android:hint="Breeds(germanshephard)"
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/editTextNumber"
+            android:id="@+id/PetAge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -50,7 +50,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName5"
+            android:id="@+id/name2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -58,7 +58,7 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/editTextTextPostalAddress"
+            android:id="@+id/Address1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -66,7 +66,7 @@
             android:inputType="textPostalAddress" />
 
         <EditText
-            android:id="@+id/editTextNumber2"
+            android:id="@+id/Number2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -106,7 +106,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Confirm/Search" />
+                android:text="Confirm/Search"
+                android:onClick="ConfirmSearch"/>
         </LinearLayout>
 
     </LinearLayout>

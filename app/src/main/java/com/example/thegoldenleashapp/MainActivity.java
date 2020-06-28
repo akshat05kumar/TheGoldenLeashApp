@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        FORButton();
 
     }
 
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void FORButton()
-    {
+    {   new Dbmanager(this);
         Button asButton=(Button) findViewById(R.id.button1);
         asButton.setOnClickListener(new View.OnClickListener() {
             @Override
