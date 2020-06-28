@@ -87,7 +87,18 @@
         <SeekBar
             android:id="@+id/seekBar"
             android:layout_width="match_parent"
-            android:layout_height="49dp" />
+            android:layout_height="49dp"
+            android:progress="2" />
+
+        <TextView
+            android:id="@+id/seekBarProgress"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/ring_background"
+            android:gravity="center"
+            android:text="2"
+            android:textColor="#ddd00000" />
 
         <LinearLayout
             android:layout_width="match_parent"
